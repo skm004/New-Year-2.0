@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Alkatra:wght@400..700&family=Charmonman:wght@400;700&family=Cookie&family=Courgette&family=Kaushan+Script&family=Nunito:wght@200..1000&family=Playwrite+BE+VLG+Guides&family=Yellowtail&display=swap');
+
+/* Reset and box-sizing */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body with gradient background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(19,21,38);
+    background: linear-gradient(90deg, rgba(19,21,38,1) 15%, rgba(4,4,46,1) 51%, rgba(14,1,1,1) 83%);
+    /* background-attachment: fixed; */
+    background-size: cover;
+    overflow: hidden;
+    /* font-family: "Luckiest Guy", cursive; */
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: transparent;
+}
+
+/* Content styling */
+.content {
+    font-size: 10vw; /* Responsive font size */
+    font-family: "Courgette", serif;
+    font-weight: 600;
+    color: transparent;
+    -webkit-text-stroke: 2px aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap; /* Default single line */
+    text-align: center; /* Center align for smaller screens */
+    gap: 6rem;
+    position: absolute;
+    top: 10vh; /* Initial position for larger screens */
+    letter-spacing: -1.5rem; /* Default spacing for larger screens */
+}
+
+/* Bounce effect for letters */
+.content span {
+    -webkit-animation: bounce 0.3s ease infinite alternate;
+    animation: bounce 0.3s ease infinite alternate;
+    color: black;
+    transform-origin: center;
+}
+
+/* Animation delay for each letter */
+.content span:nth-child(1) { -webkit-animation-delay: 0.1s; }
+.content span:nth-child(2) { -webkit-animation-delay: 0.2s; }
+.content span:nth-child(3) { -webkit-animation-delay: 0.3s; }
+.content span:nth-child(4) { -webkit-animation-delay: 0.4s; }
+.content span:nth-child(5) { -webkit-animation-delay: 0.5s; }
+.content span:nth-child(6) { -webkit-animation-delay: 0.6s; }
+.content span:nth-child(7) { -webkit-animation-delay: 0.7s; }
+.content span:nth-child(8) { -webkit-animation-delay: 0.8s; }
+.content span:nth-child(9) { -webkit-animation-delay: 0.9s; }
+.content span:nth-child(10) { -webkit-animation-delay: 1s; }
+.content span:nth-child(11) { -webkit-animation-delay: 1.1s; }
+.content span:nth-child(12) { -webkit-animation-delay: 1.2s; }
+.content span:nth-child(13) { -webkit-animation-delay: 1.3s; }
+.content span:nth-child(14) { -webkit-animation-delay: 1.4s; }
+
+/* Bounce animation */
+@-webkit-keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Styling for "2025" */
+.year {
+    font-size: 11vw;
+    font-family: "Agbalumo", serif;
+    font-weight: 400;
+    color: aqua;
+    -webkit-text-stroke: 2px black;
+    position: absolute;
+    top: 40vh; /* Default position below "Happy New Year" */
+    text-align: center;
+    margin-top: 30px;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+    .content {
+        flex-wrap: wrap; /* Stack text vertically */
+        gap: 3rem; /* Adjust gap for smaller screens */
+        font-size: 12vw; /* Adjust font size for tablets */
+        top: 25vh; /* Adjust vertical position */
+        letter-spacing: -0.1rem; /* Adjust letter spacing */
+    }
+
+    .year {
+        font-size: 10vw; /* Larger size for 2025 */
+        top: 65vh; /* Adjust position for 2025 */
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack "Happy", "New", and "Year" */
+        font-size: 15vw; /* Adjust font size for smaller screens */
+        gap: 2rem; /* Minimize spacing */
+        top: 10vh; /* Move higher */
+        letter-spacing: 0; /* Normal letter spacing */
+    }
+
+    .year {
+        font-size: 12vw; /* Adjust "2025" size */
+        top: 45vh; /* Push lower */
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        font-size: 18vw; /* Further reduce font size */
+        top: 10vh;
+        gap: 1rem; /* Further minimize spacing */
+        letter-spacing: 0.2rem; /* Slightly increase spacing for readability */
+    }
+
+    .year {
+        font-size: 14vw;
+        top: 45vh; /* Push even lower */
+    }
+}
+
+/* Styling for the .msg element */
+.msg {
+    margin-top: 40rem;
+    font-size: 1.5rem;
+    animation: fadeInUp 2s ease-out;
+    font-family: "Agbalumo", serif;
+    font-weight: 400;
+}
+
+/* Responsive styling for .msg */
+@media (max-width: 1024px) {
+    .msg {
+        margin-top: 55rem; /* Adjust margin for tablets */
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .msg {
+        margin-top: 15rem; /* Adjust margin for smaller screens */
+        font-size: 1rem; /* Reduce font size for mobile devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .msg {
+        margin-top: 15rem; /* Further reduce margin for very small screens */
+        font-size: 0.9rem; /* Further reduce font size for very small screens */
+    }
+}
+
+/* Styling for the link inside .msg */
+.msg a {
+    color: #d4ff00;
+    text-decoration: none;
+}
+
+.msg a:hover {
+    color: #007bff;
+}
+
+/* Styling for stars */
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Keyframe for twinkling effect */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Keyframe for fade-in effect of .msg */
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.loader-container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    transition: top 1s ease-in-out; /* Smooth transition for hiding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; /* Padding for smaller screens */
+}
+
+/* Responsive image styling */
+.loader-image {
+    width: 20rem; /* Default size */
+    height: auto;
+    margin-bottom: 20px; /* Space between the image and text */
+    opacity: 0; /* Initially hidden */
+    animation: fadeInImage 2s forwards; /* Fade-in animation */
+}
+
+@media (max-width: 768px) {
+    .loader-image {
+        width: 15rem; /* Adjust for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-image {
+        width: 12rem; /* Adjust for smaller screens */
+    }
+}
+
+/* Loader text styling */
+.loader-text {
+    display: flex;
+    flex-wrap: wrap; /* Wrap letters on smaller screens */
+    font: 5rem 'Alkatra', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-align: center; /* Center-align for smaller screens */
+    justify-content: center;
+    /* gap: 1em; Add spacing between letters */
+}
+
+@media (max-width: 768px) {
+    .loader-text {
+        font-size: 4rem; /* Adjust font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-text {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+        gap: 0.5rem; /* Reduce spacing between letters */
+    }
+}
+
+/* Styling for individual letters */
+.loader-text span {
+    opacity: 0;
+    animation: fadeInText 2s forwards; /* Fade-in animation */
+}
+
+/* Stagger the animation of each letter */
+.loader-text span:nth-child(1) { animation-delay: 0s; }
+.loader-text span:nth-child(2) { animation-delay: 0.2s; }
+.loader-text span:nth-child(3) { animation-delay: 0.4s; }
+.loader-text span:nth-child(4) { animation-delay: 0.6s; }
+.loader-text span:nth-child(5) { animation-delay: 0.8s; }
+.loader-text span:nth-child(6) { animation-delay: 1s; }
+.loader-text span:nth-child(7) { animation-delay: 1.2s; }
+.loader-text span:nth-child(8) { animation-delay: 1.4s; }
+.loader-text span:nth-child(9) { animation-delay: 1.6s; }
+.loader-text span:nth-child(10) { animation-delay: 1.8s; }
+.loader-text span:nth-child(11) { animation-delay: 2s; }
+.loader-text span:nth-child(12) { animation-delay: 2.2s; }
+.loader-text span:nth-child(13) { animation-delay: 2.4s; }
+.loader-text span:nth-child(14) { animation-delay: 2.6s; }
+
+/* Optional: Add spacing specifically for the "space" span */
+.loader-text .space {
+    width: 2rem; /* Adjust spacing for the space */
+    animation: none; /* No animation for the space */
+}
+
+/* Responsive spacing for the space */
+@media (max-width: 768px) {
+    .loader-text .space {
+        width: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-text .space {
+        width: 1rem;
+    }
+}
+
+/* Fade-in animation for the image */
+@keyframes fadeInImage {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-in animation for the text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* For smaller devices, adjust alignment and layout */
+@media (max-width: 1024px) {
+    .loader-container {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-container {
+        padding: 1rem;
+    }
+}
